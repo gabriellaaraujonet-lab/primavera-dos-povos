@@ -27,10 +27,11 @@ nav ul {
   list-style: none;
   padding: 0;
   margin-top: 10px;
+  flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 5px 10px;
 }
 
 nav ul li a {
@@ -54,14 +55,16 @@ section {
   margin-bottom: 40px;
 }
 
-#contexto{
+#contexto {
   display: flex;
+  gap: 20px;
 }
-#manifestacao{
+
+#manifestacao {
   width: 30rem;
   height: auto;
   border-radius: 20px;
-  border: solid 5px #7c3e2f ;
+  border: solid 5px #7c3e2f;
 }
 
 h2 {
@@ -70,9 +73,14 @@ h2 {
   display: inline-block;
   padding-bottom: 5px;
 }
-#causas , #consequencias , #figuras {
+
+#causas,
+#consequencias,
+#figuras {
   margin: 5rem;
 }
+
+/* Figuras */
 .figuras-container {
   display: flex;
   flex-direction: column;
@@ -98,7 +106,6 @@ h2 {
   text-align: justify;
 }
 
-
 /* Galeria */
 .galeria {
   display: flex;
@@ -118,15 +125,8 @@ h2 {
   transform: scale(1.05);
 }
 
-.galeria {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .links {
-  text-align: center; /* centraliza imagem e link */
+  text-align: center;
 }
 
 .links img {
@@ -134,11 +134,12 @@ h2 {
   border-radius: 8px;
   border: 2px solid #7c3e2f;
   display: block;
-  margin-bottom: 8px; /* espaço entre imagem e link */
+  margin-bottom: 8px;
 }
 
-.links a, .links p {
-  display: block; 
+.links a,
+.links p {
+  display: block;
   color: #7c3e2f;
   font-weight: bold;
   text-decoration: none;
@@ -150,11 +151,13 @@ h2 {
 
 .container img {
   width: 70%;
-  border-radius: 30px; 
+  border-radius: 30px;
 }
-.container p{
+
+.container p {
   text-align: center;
 }
+
 /* Rodapé */
 footer {
   background: #7c3e2f;
@@ -162,4 +165,53 @@ footer {
   text-align: center;
   padding: 15px;
   margin-top: 20px;
+}
+
+/* ----------- RESPONSIVIDADE ----------- */
+@media (max-width: 1024px) {
+  body {
+    margin: 1rem;
+  }
+  #manifestacao {
+    width: 100%;
+  }
+  #causas, #consequencias, #figuras {
+    margin: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #contexto {
+    flex-direction: column;
+    align-items: center;
+  }
+  .figura {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .figura img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+  .container img {
+    width: 100%;
+  }
+  .galeria img {
+    width: 100%;
+    max-width: 300px;
+  }
 }
